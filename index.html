@@ -1,122 +1,56 @@
-<script src="jq.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<link rel="stylesheet" href="bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-
-
-
-<nav>
-	<div class="container">
-					<div class="row">
-							<div class="col-md-3">  
-								<div class="nailed-logo"><a href="./"></a></div>
-							</div>
-							<div class="col-md-3">  
-									<div class="count-active">active customers: <span></span></div>
-							</div>
-							<div class="col-md-3">  
-									<div class="count-inactive">inactive customers: <span></span></div>
-							</div>
-							<div class="col-md-3">  
-									<div class="count-negative">with negative balance: <span></span></div>
-							</div>
-					</div>
-	</div>
-</nav>
-
-<section class="customers">
-	<div class="container">
-		<div class="row">
-				<div class="col-md-4">   
-						<div class="count-balance">total balance: <span></span></div>
-					</div>
-			<div class="col-md-8">
-				<ul class="filter">
-					<li><input type="radio" id="f-option" name="selector" class="all" checked><label for="f-option">all</label><div class="check"></div></li>
-					<li><input type="radio" id="s-option" name="selector" class="inactive"><label for="s-option">inactive customers</label><div class="check"><div class="inside"></div></div></li>
-					<li><input type="radio" id="t-option" name="selector" class="negative"><label for="t-option">negative balance</label><div class="check"><div class="inside"></div></div></li>
-				</ul>		
-			</div> 
-		</div>
-		<div class="row">
-			<div class="col-md-12"> 
-					<div id="data-wrap"></div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>NailedIT - DONE IS BETTER THAN PERFECT</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.0.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- *** -->
+	<!-- NAV -->
+	<!-- *** -->
+	<nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3"><div class="nailed-logo"><a href="./"></a></div></div>
+				<div class="col-md-3"><div class="count-active"><span></span> active customers</div></div>
+				<div class="col-md-3"><div class="count-inactive"><span></span> inactive customers</div></div>
+				<div class="col-md-3"><div class="count-negative"><span></span> with negative balance</div></div>
 			</div>
-
 		</div>
-	</div>
-</section>
+	</nav>
+	<!-- ******* -->
+	<!-- SECTION -->
+	<!-- ******* -->
+	<section class="customers">
+		<div class="container">
+			<div class="row">
+					<div class="col-md-4">   
+							<div class="count-balance">total balance is <span></span></div>
+						</div>
+				<div class="col-md-8">
+					<ul class="filter">
+						<li><input type="radio" id="f-option" name="selector" class="all" checked><label for="f-option">all</label><div class="check"></div></li>
+						<li><input type="radio" id="s-option" name="selector" class="inactive"><label for="s-option">inactive customers</label><div class="check"><div class="inside"></div></div></li>
+						<li><input type="radio" id="t-option" name="selector" class="negative"><label for="t-option">negative balance</label><div class="check"><div class="inside"></div></div></li>
+					</ul>		
+				</div> 
+			</div>
+			<div class="row">
+				<div class="col-md-12"> 
+					<div id="data-wrap"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ****** -->
+	<!-- FOOTER -->
+	<!-- ****** -->
+	<footer>handmade with love by tk</footer>
+	<script src="script.js"></script>
+</body>
+</html>
 
 
-<footer>handmade with love by tk</footer>
-
-
-
-
-<script type = "text/javascript" language = "javascript">
-     
-		$.getJSON('data.json', function(data) {
-			console.log(data);
-			var output = '<table class="container"><thead><th>id</th><th>name</th><th>age</th><th>gender</th><th>company</th><th>e-mail</th><th>phone</th><th>address</th><th>balance</th><th class="isActive">isActive</th><th>discount</th></thead><tbody>';
-			$.each(data, function(key, val) {
-				if (val.isActive == true) {
-					var active = "active";
-					var discount = "NO";
-				} else {
-					var active = "N/a";
-					var discount = (val.balance.replace(',', '') * 0.1).toFixed(2);
-				}
-				output += '<tr><th scope="row"><div>' + val.index + '</div></th><td><div>' + val.name + '</div></td><td><div>' + val.age + '</div></td><td><div>' + val.gender + '</div></td><td><div>' + val.company + '</div></td><td><div>' + val.email + '</div></td><td><div>' + val.phone + '</div></td><td><div>' + val.address + '</div></td><td class="balance"><div>' + val.balance + '</div></td><td class="isActive"><div>' + active + '</div></td><td class=""><div>' + discount + '</div></td></tr>';
-			});
-			output += '</tbody></table>';
-			$('#data-wrap').html(output);
-		});
-		$(document).ready(function() {
-			$(".count-active span").text($("td.isActive:contains('active')").length);
-			$(".count-inactive span").text($("td.isActive:contains('N/a')").length);
-			$(".count-negative span").text($("td.balance:contains('-')").length);
-
-			$("td.balance:contains('-')").parents('tr').css('background-color', 'rgba(255, 0, 0, 0.14)');
-			$("td:contains('NO')").css('color', 'red').css('font-weight', 'bold');
-			$("td:last-child:not(:contains('NO'))").css('color', '#0DFF92').css('font-weight', 'bold');
-			
-
-			$('.all').change(function() {
-				$(".inactive").removeClass("inactive");
-			});	
-
-			$('.negative').change(function() {
-				$(".inactive").removeClass("inactive");
-				$("td.balance:not(:contains('-'))").parents('tr').toggleClass('inactive');
-			});	
-
-			$('.inactive').change(function() {
-				$(".inactive").removeClass("inactive");
-			$("td.isActive:not(:contains('N/a'))").parents('tr').toggleClass('inactive');
-			});
-		});
-		$(document).ready(function() {
-			calc_total();
-	
-			function calc_total() {
-				var sum = 0;
-				$(".balance").each(function() {
-					sum += parseFloat($(this).text().replace(',', ''));
-				});
-				$('.count-balance span').text(sum);
-			}
-		
-	
-		
-		
-		});
-		
-
-
-
-
-
-
-
-</script>
-   
