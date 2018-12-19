@@ -2,7 +2,6 @@
 
 demo: http://nit.blizzards.sk
 
-exercise complete: 91%
-pre-release update:  19.12.2018
+exercise complete: 100%
 
-estimated date of completion: 20.12.2018 / morning
+RC VERSION DEV 
