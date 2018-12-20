@@ -32,3 +32,12 @@ Management requires specific views on obtained customer data.
 At first, i will fetch data from external source, then break whole data into parts. Customers table can be created using obtained data parts. For displaying customers table, i will create single user-friendly html page. 
 Customers table structure will be the same as is used in company database. With this result iam able to maintain page-views as they are specified in requirements. 
 
+
+
+
+
+
+
+
+
+[![HitCount](http://hits.dwyl.io/bytk/nailedit.svg)](http://hits.dwyl.io/bytk/nailedit)
