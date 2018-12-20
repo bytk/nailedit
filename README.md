@@ -2,6 +2,5 @@
 
 demo: http://nit.blizzards.sk
 
-exercise complete: 100%
-
-RC VERSION DEV 
+- finished > development > 100% 
+- ongoing > documentation > README.md > next update
