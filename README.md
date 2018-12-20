@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 # nailedit
 
 demo: http://nit.blizzards.sk
