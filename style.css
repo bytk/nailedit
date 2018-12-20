@@ -1,6 +1,5 @@
 /* globals */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-@import url(http://cnt.blizzards.sk);
 * {
   transition: 0.4s all cubic-bezier(1, 0.03, 0.35, 1);
 }
