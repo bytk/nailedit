@@ -1,7 +1,6 @@
 # Excercise 
 
-**online demo:** https://bytk.github.io/nailedit/
-**mirror:** http://nic.blizzards.sk/
+**online demo:** https://bytk.github.io/nailedit/ 
 
 ### TODO
 
@@ -29,8 +28,17 @@ Management requires specific views on obtained customer data.
   
 ### Abstract
 
-At first, i will fetch data from external source, then break whole data into parts. Customers table can be created using obtained data parts. For displaying customers table, i will create single user-friendly html page. 
-Customers table structure will be the same as is used in company database. With this result iam able to maintain page-views as they are specified in requirements. 
+- At first, fetch data from external source, then split fetched data into parts. 
+- bind specific parts of data to custom variables
+- process custom variables to calculate values that are required for table views 
+- Create a table for customers inside a simple html page, driven by css and javascript
+- Table structure will be the same as used in company database tables
+- bind specific values to custom fields in a row as result
+- loop results for each row as customer records
+- calculate additional data using custom variables and specific values
+- load additional data as results to specific positions in html page
+- maintain specific table-views as described in requirements
+- simple customer statistics will be processed using additional data
 
 
 
