@@ -31,26 +31,25 @@ Management requires specific views on obtained customer data.
   
 ### Abstract
 
-In first step we need to fetch our data from internet and split it into single parts. After this, we can extract every value from any key at each record. To display any data we need to create enviroment as html page with corresponding user-interface (UI) driven by css and javascript. To process customers table, we need to sort customers into two main groups by matching against value from key "isActive". We add new column called "DISCOUNT" where we display two values regarding to customer group. (**REQ.5**) Now we can process table into **UI** and display complete customers data (**REQ.1**) and create selection that adds additional functionality on customers with negative balance (**REQ.3a**). Currently we can select all inputs required for create working filter and bind all views on filter controller (in this case radio buttons were used). We create filter with mapped rules directly in UI (**REQ.3**, **REQ.4**)
+In first step we need to fetch our data from internet and split it into single parts. After this, we can extract every value from any key at each record. To display any data we need to create enviroment as html page with corresponding user-interface (UI) driven by css and javascript. To process customers table, we need to sort customers into two main groups by matching against value from key "isActive" (**REQ.4**). We add new column called "DISCOUNT" where we display two values regarding to customer group. (**REQ.5**) Now we can process table into **UI** and display complete customers data (**REQ.1**) and create selection query based on negative value, that adds additional functionality on customers with negative balance (**REQ.3a**) and select them as filter rule (**REQ.3**). Currently we can select all inputs required for create working filter and bind 3 views on filter controller (in this case radio buttons were used). In order to display basic statistics and total balance, we have to create specific placeholders inside html page and bind on calculated values (**REQ.2, REQ.6**)
 
-```
-tu som skoncil
-...
-```
 
 #
 
-#### **REQ.1** COMPLETE CUSTOMERS DATA VIEW
+##### **REQ.1** COMPLETE CUSTOMERS DATA VIEW
 
 *primary view will show relevant customer data, including custom "DISCOUNT" column*
 
 1. map processed data parts into corresponding columns 
 2. display customers as they need to be sorted
 
-#### **REQ.3** CUSTOMERS WITH NEGATIVE BALANCE VIEW
-...
+##### **REQ.3** CUSTOMERS WITH NEGATIVE BALANCE VIEW
+```
+dopisat definicie pre REQs
+```
 
-#### **REQ.5** DISCOUNT
+
+##### **REQ.5** DISCOUNT
 
 *Jim always calculates discount as 10% of their balance, he always needs to put this into calculator and it drives him crazy...*
 
