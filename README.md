@@ -9,7 +9,7 @@
 - [x] Invite collaborators
 - [x] Deploy documentation
 - [x] Include thought process
-- [ ] Additional functionality
+- [x] Additional functionality (**REQ.3a**, **...**)
 
 #
 ### Story
@@ -19,36 +19,38 @@ Management requires specific views on obtained customer data.
 
 ##### Requirements:
 
-- complete customers data
-  - company total-balance overview
-  - customers with negative balance
-- inactive customers 
-  - discount field for inactive users (10% from balance)
-- customer statistics
+- complete customers data (**REQ.1**)
+  - company total-balance overview (**REQ.2**)
+  - customers with negative balance (**REQ.3**)
+  	- highlight negative balance rows in complete customers data  (**REQ.3a**)
+- inactive customers (**REQ.4**)
+  - discount field for inactive users (10% from balance) (**REQ.5**)
+- customer statistics (**REQ.6**)
 #
   
   
 ### Abstract
 
-In first step we need to fetch our data from internet and split it into single parts. After this, we can extract every value from any key at each record. To display any data we need to create enviroment as html page with corresponding user-interface (UI) driven by css and javascript. To process customers table, we need to sort customers into two main groups by matching against value from key "isActive". We add new column called "DISCOUNT" where we display two values regarding to customer group. (**REQ.3**) Now we can process table and display complete customers data. (**REQ.1**)
+In first step we need to fetch our data from internet and split it into single parts. After this, we can extract every value from any key at each record. To display any data we need to create enviroment as html page with corresponding user-interface (UI) driven by css and javascript. To process customers table, we need to sort customers into two main groups by matching against value from key "isActive". We add new column called "DISCOUNT" where we display two values regarding to customer group. (**REQ.5**) Now we can process table into **UI** and display complete customers data (**REQ.1**) and create selection that adds additional functionality on customers with negative balance (**REQ.3a**). Currently we can select all inputs required for create working filter and bind all views on filter controller (in this case radio buttons were used). We create filter with mapped rules directly in UI (**REQ.3**, **REQ.4**)
+
+```
+tu som skoncil
+...
+```
+
 #
 
-###### **REQ.1** COMPLETE CUSTOMERS DATA
+#### **REQ.1** COMPLETE CUSTOMERS DATA VIEW
 
 *primary view will show relevant customer data, including custom "DISCOUNT" column*
 
 1. map processed data parts into corresponding columns 
 2. display customers as they need to be sorted
 
-###### **REQ.2** CUSTOMERS WITH NEGATIVE BALANCE
-...
-```
-tu som skoncil 
-```
+#### **REQ.3** CUSTOMERS WITH NEGATIVE BALANCE VIEW
 ...
 
-
-###### **REQ.3** DISCOUNT
+#### **REQ.5** DISCOUNT
 
 *Jim always calculates discount as 10% of their balance, he always needs to put this into calculator and it drives him crazy...*
 
@@ -70,7 +72,7 @@ customer group | "DISCOUNT"
 	1. then split data to parts
    	2. bind required parts as **custom variables**
     3. process **custom variables** to **calculate values**
-   	4. use **calculated values** as for **filter rules**
+   	4. use **customised selectors** to grab **specific values** and use them  for **filter rules**
    	5. use **filter rules** to maintain **custom views**
 2. Create simple html page, driven by css and javascript
 	1. create a table for customers
@@ -86,5 +88,5 @@ customer group | "DISCOUNT"
        2. put **additional data** as string into specific **data placeholder**
        2. load **data placeholders** into page
 
- 
+
 
