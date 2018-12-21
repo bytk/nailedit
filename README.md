@@ -1,5 +1,7 @@
 # Excercise 
 
+*system design oriented documentation*
+
 **online demo:** https://bytk.github.io/nailedit/ 
 
 ### TODO
@@ -12,7 +14,7 @@
 - [x] Additional functionality (**REQ.3a**, **...**)
 
 #
-### Story
+### User Story
 
 NailedIT is a small manufacturing company. Their database has been dumped to obtain specific data. Dumped data contains customer info, company, contact, activity, balance and hidden fields. 
 Management requires specific views on obtained customer data.
@@ -36,18 +38,30 @@ In first step we need to fetch our data from internet and split it into single p
 
 #
 
+### Requirements 
 ##### **REQ.1** COMPLETE CUSTOMERS DATA VIEW
 
 *primary view will show relevant customer data, including custom "DISCOUNT" column*
 
 1. map processed data parts into corresponding columns 
 2. display customers as they need to be sorted
+3. add a rule for filter that reset rest two possible filter states
+
+##### **REQ.2** COMPANY TOTAL-BALANCE OVERVIEW
+*company total-balance will calculate summary from all values in "balance" column. Result will be displayed as statistics using own placeholder in html page*
+1. strip decimal point in value of "balance"
+2. create a function to calculate summary result
+3. display result as statistics in html page
 
 ##### **REQ.3** CUSTOMERS WITH NEGATIVE BALANCE VIEW
-```
-dopisat definicie pre REQs
-```
+*additional view shows customers matching against negative value in "balance" key and mark them in **primary view** using css*
+1. match every customer **NOT CONTAINING NEGATIVE VALUE** in "balance"
+2. create a filter rule and hide every positive-balanced customer from "**customers with negative balance view**
+3. add a rule for filter
 
+##### **REQ.4** INACTIVE CUSTOMERS VIEW
+*additional view shows customers matching against a value in "isActive" column*
+1. match every customer **CONTAINING "inactive" VALUE** in "isActive"
 
 ##### **REQ.5** DISCOUNT
 
@@ -62,6 +76,8 @@ customer group | "DISCOUNT"
 ------------ | -------------
 **active customers** | "NO"
 **inactive customers** | calculate ( balance * 0.1 ) = **10%**
+
+4. mark field content in **UI** using css
 
 #
 
