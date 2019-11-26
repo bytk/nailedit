@@ -1,5 +1,4 @@
 ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fbytk%2Fvolby)
-![Hits](http://97bb5788.ngrok.io/!/test.php)
 
 # Excercise 
 
